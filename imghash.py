@@ -1,8 +1,8 @@
 #   IMGHash by Robert Sammataro
 #   Built with the ImageHash library
 #
-#   Version 0.1.1
-#   Build Date 6 March 2021
+#   Version 0.1.2
+#   Build Date 9 March 2021
 #
 #   github.com/robertsammataro/IMGHash
 
@@ -46,13 +46,11 @@ def run_hash_scan(filepath):
             flags.append(hashes[count]+"|"+paths[count])
         count += 1
 
-
-    if not os.path.exists(quar_path):
-        os.makedirs(quar_path)
-
-
     for item in sorted(flags):
         print(item)
+        
+        if not os.path.exists(quar_path):
+            os.makedirs(quar_path)
             
         if not os.path.exists(quar_path+item.split("|")[0]):
             os.makedirs(quar_path+item.split("|")[0])
